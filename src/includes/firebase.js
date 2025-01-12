@@ -1,0 +1,29 @@
+import firebase from "firebase/app";
+import "firebase/auth" ;
+import "firebase/firestore";
+import "firebase/storage";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCW5fgo6DCm5dsF9mmUeA7MVSPJWYkec24",
+    authDomain: "music-871fa.firebaseapp.com",
+    projectId: "music-871fa",
+    storageBucket: "music-871fa.appspot.com",
+    appId: "1:290295585659:web:32bbff6dc3a9d90f547bde"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+const storage = firebase.storage();
+
+const userCollection = db.collection('users');
+const songsCollection = db.collection('songs');
+
+export {
+    auth,
+    db,
+    userCollection,
+    songsCollection,
+    storage
+}
